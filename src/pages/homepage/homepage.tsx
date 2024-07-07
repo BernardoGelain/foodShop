@@ -13,6 +13,7 @@ export default function Homepage() {
     <Container>
       <Header />
       <Img src={restaurant?.webSettings.bannerImage} />
+
       <CardContainer>
         <Menu />
         <Cart />

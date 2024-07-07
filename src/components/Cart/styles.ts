@@ -7,11 +7,17 @@ export const Container = styled.div`
   -webkit-box-shadow: 0px 0px 11px 0px rgba(133, 133, 133, 1);
   -moz-box-shadow: 0px 0px 11px 0px rgba(133, 133, 133, 1);
   box-shadow: 0px 0px 11px 0px rgba(133, 133, 133, 1);
+  justify-content: space-between;
+  max-height: 350px;
 `;
 export const ContainerItems = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100px;
+  min-height: 180px;
+  max-height: 180px;
+  overflow-y: scroll;
+
+  overflow-y: scroll;
 `;
 export const Divider = styled.div<{
   $twoElement?: boolean;
