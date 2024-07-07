@@ -12,6 +12,8 @@ export const CardContainer = styled.div`
   display: flex;
   background-color: ${({ theme }) => theme.colors.backgroundContainer};
   margin-top: 2px;
+  padding: 32px 40px 32px 40px;
+  justify-content: space-around;
   width: 85%;
 `;
 export const Img = styled.img`

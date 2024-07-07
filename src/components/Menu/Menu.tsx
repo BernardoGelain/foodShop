@@ -1,5 +1,20 @@
-import { Container } from "./styles";
+import { Container, ContainerItem, Icon, Text } from "./styles";
 
 export default function Menu() {
-  return <Container>as654da65s4</Container>;
+  return (
+    <Container>
+      <ContainerItem $border={true}>
+        <Icon src="burgerNav.svg" $border={true} />
+        <Text $bold={true}>Burguers</Text>
+      </ContainerItem>
+      <ContainerItem>
+        <Icon src="dessertNav.svg" />
+        <Text>Drinks</Text>
+      </ContainerItem>
+      <ContainerItem>
+        <Icon src="drinkNav.svg" />
+        <Text>Desserts</Text>
+      </ContainerItem>
+    </Container>
+  );
 }

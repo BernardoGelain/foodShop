@@ -9,7 +9,7 @@ export const lightTheme = {
     gradient: "linear-gradient(to right, #ff00cc, #333399);",
     success: "#14C38E",
     error: "#d45d5d",
-    text: "#1A1A1A",
+    text: "#464646",
     text_light: "#FFFF",
     text_dark: "#1A1A1A",
     text_secondary: "#6F767E",
