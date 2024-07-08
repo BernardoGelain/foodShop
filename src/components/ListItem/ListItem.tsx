@@ -13,7 +13,7 @@ export default function ListItem({ item }: Props) {
   const [open, setOpen] = useState(false);
   const handleClose = () => setOpen(false);
   const handleOpen = () => setOpen(true);
-  console.log(open);
+
   return (
     <>
       <Container onClick={handleOpen}>

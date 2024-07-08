@@ -8,8 +8,9 @@ import { ModifierItem } from "../../../Models/Menu/ModifierItem";
 
 type Props = {
   item: MenuItem;
+  handleClose: () => void;
 };
-export default function AddCartModal({ item }: Props) {
+export default function AddCartModal({ item, handleClose }: Props) {
   const { cart, addToCart, removeFromCart } = useContext(CartContext);
   const [quantity, setQuantity] = useState(1);
   const [price, setPrice] = useState(item.price);
@@ -23,11 +24,11 @@ export default function AddCartModal({ item }: Props) {
   };
   const handleAdd = () => {
     if (!item.modifiers) {
-      setQuantity(quantity + 1);
       addToCart({ ...item, quantity: quantity });
     } else if (!!modifierState) {
       addToCart({ ...item, quantity: quantity, price: modifierState.price, name: `${item.name} - ${modifierState.name}` });
     }
+    handleClose();
   };
 
   useEffect(() => {

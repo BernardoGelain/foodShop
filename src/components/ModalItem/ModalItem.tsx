@@ -37,7 +37,7 @@ export default function ModalItem({ item, handleClose, open }: Props) {
             <Text $fontSize="18px">{item?.description}</Text>
           </ContainerInfo>
 
-          <AddCartModal item={item} />
+          <AddCartModal item={item} handleClose={handleClose} />
         </Container>
       </Box>
     </Modal>
