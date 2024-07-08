@@ -13,4 +13,5 @@ export const ContainerInfo = styled.div`
 `;
 export const ImageItem = styled.img`
   width: 140px;
+  border-radius: 8px;
 `;

@@ -1,3 +1,4 @@
+import { CartProvider } from "./contexts/CartContext/CartContext";
 import { ThemeContextProvider } from "./contexts/ThemeContext/ThemeContext";
 import Routes from "./routes/routes";
 
@@ -5,7 +6,9 @@ function App() {
   return (
     <>
       <ThemeContextProvider>
-        <Routes />
+        <CartProvider>
+          <Routes />
+        </CartProvider>
       </ThemeContextProvider>
     </>
   );

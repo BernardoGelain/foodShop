@@ -14,4 +14,5 @@ export interface MenuItem {
   images: Image[];
   modifiers?: Modifier[];
   available: boolean;
+  quantity: number;
 }
