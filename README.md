@@ -1,27 +1,57 @@
-# React + TypeScript + Vite
+# README
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Como Rodar o Projeto FoodShop
 
-Currently, two official plugins are available:
+Este guia irá ajudá-lo a configurar e executar o projeto React utilizando Yarn ou npm. Siga os passos abaixo para garantir que tudo esteja configurado corretamente.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Pré-requisitos
 
-## Expanding the ESLint configuration
+Certifique-se de ter o Node.js instalado em sua máquina. Você pode verificar se ele está instalado executando o seguinte comando no terminal:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```bash
+node -v
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Você pode usar Yarn ou npm para instalar as dependências do projeto.
+
+#### Usando Yarn
+
+1. Instale o Yarn, caso ainda não o tenha:
+
+   ```bash
+   npm install --global yarn
+   ```
+
+2. Instale as dependências do projeto:
+
+   ```bash
+    yarn install
+   ```
+
+#### Usando NPM
+
+1. Instale as dependências do projeto:
+
+```bash
+npm install
+```
+
+### Executando o Projeto
+
+Após instalar todas as dependências, você pode iniciar o servidor de desenvolvimento.
+
+#### Usando Yarn
+
+```bash
+yarn dev
+```
+
+### Tratando Erros de CORS
+
+Se você encontrar erros de CORS (Cross-Origin Resource Sharing), pode utilizar a seguinte configuração no arquivo `axios.ts`:
+
+```typescript
+const api = axios.create({
+  baseURL: "https://cors-anywhere.herokuapp.com/cdn-dev.preoday.com/challenge/",
+});
+```
