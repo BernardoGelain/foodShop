@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     border-radius: 10px;
   }
   ::-webkit-scrollbar-track{
-    background: ${({ theme }) => theme.colors.secondary};
+    background: ${({ theme }) => theme.colors.background};
   }
 }
 body {

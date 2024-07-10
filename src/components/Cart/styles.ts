@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div<{
+  $empty?: boolean;
+}>`
   display: flex;
   width: 30%;
   flex-direction: column;
@@ -8,16 +10,21 @@ export const Container = styled.div`
   -moz-box-shadow: 0px 0px 11px 0px rgba(133, 133, 133, 1);
   box-shadow: 0px 0px 11px 0px rgba(133, 133, 133, 1);
   justify-content: space-between;
-  max-height: 350px;
+  max-height: ${(props) => (props.$empty ? "200px" : "350px")};
 `;
 export const ContainerItems = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 180px;
+
   max-height: 180px;
   overflow-y: scroll;
 
   overflow-y: scroll;
+`;
+export const EmptyCart = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 20px;
 `;
 export const Divider = styled.div<{
   $twoElement?: boolean;

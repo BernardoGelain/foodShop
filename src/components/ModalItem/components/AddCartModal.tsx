@@ -25,10 +25,11 @@ export default function AddCartModal({ item, handleClose }: Props) {
   const handleAdd = () => {
     if (!item.modifiers) {
       addToCart({ ...item, quantity: quantity });
+      handleClose();
     } else if (!!modifierState) {
       addToCart({ ...item, quantity: quantity, price: modifierState.price, name: `${item.name} - ${modifierState.name}` });
+      handleClose();
     }
-    handleClose();
   };
 
   useEffect(() => {
