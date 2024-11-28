@@ -38,20 +38,35 @@ npm install
 
 ### Executando o Projeto
 
-Após instalar todas as dependências, você pode iniciar o servidor de desenvolvimento.
+Após instalar todas as dependências, é necessário iniciar o servidor backend antes de executar o frontend.
 
-#### Usando Yarn
+#### 1. Rodando o servidor backend
+
+Há um arquivo `server.js` incluído no projeto que serve a API para evitar erros de CORS. Para iniciar o backend, siga os passos abaixo:
+
+1. Certifique-se de estar no diretório onde o `server.js` está localizado.
+2. Inicie o servidor:
+
+   ```bash
+   node server.js
+   ```
+
+O servidor backend rodará na porta 3000. Modifique se necessário.
+
+#### 2. Rodando o frontend
+
+Com o backend rodando, inicie o servidor de desenvolvimento do frontend:
+
+##### Usando Yarn:
 
 ```bash
 yarn dev
 ```
 
-### Tratando Erros de CORS
+##### Usando NPM:
 
-Se você encontrar erros de CORS (Cross-Origin Resource Sharing), pode utilizar a seguinte configuração no arquivo `axios.ts`:
-
-```typescript
-const api = axios.create({
-  baseURL: "https://cors-anywhere.herokuapp.com/cdn-dev.preoday.com/challenge/",
-});
+```bash
+npm run dev
 ```
+
+O frontend abrirá por padrão na porta 5173.
