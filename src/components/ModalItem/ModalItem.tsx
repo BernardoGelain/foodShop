@@ -3,6 +3,7 @@ import { MenuItem } from "../../Models/Menu/MenuItem";
 import { Container, ContainerImage, ContainerInfo, Header, IconClose, Image } from "./styles";
 import { Text } from "../../styles/layout";
 import AddCartModal from "./components/AddCartModal";
+import { useWindowWidth } from "../../hooks/useWindowWidth";
 
 type Props = {
   item: MenuItem;
@@ -10,12 +11,14 @@ type Props = {
   open: boolean;
 };
 export default function ModalItem({ item, handleClose, open }: Props) {
+  const width = useWindowWidth() || 1280;
+  const widthModal = width > 1100 ? 550 : 300;
   const style = {
     position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 550,
+    width: widthModal,
     bgcolor: "background.paper",
     boxShadow: 24,
   };

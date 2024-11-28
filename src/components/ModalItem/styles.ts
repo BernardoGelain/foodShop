@@ -69,4 +69,8 @@ export const Button = styled.span<{ $disable?: boolean }>`
   align-items: center;
   justify-content: center;
   border-radius: 40px;
+
+  @media (max-width: 1100px) {
+    width: 250px;
+  }
 `;

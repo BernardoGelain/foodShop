@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-import api from "../config/axios";
-import { Menu } from "../Models/Menu/Menu";
+import { Menu } from "../../Models/Menu/Menu";
+import api from "../../config/axios";
 
 export const useFetchRestaurantMenu = () => {
   const [menu, setMenu] = useState<Menu>();

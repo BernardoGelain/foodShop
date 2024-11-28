@@ -15,6 +15,11 @@ export const CardContainer = styled.div`
   padding: 32px 40px 32px 40px;
   justify-content: space-around;
   width: 85%;
+
+  @media (max-width: 1100px) {
+    width: 100%;
+    padding: 10px;
+  }
 `;
 export const Img = styled.img`
   width: 100%;

@@ -18,8 +18,6 @@ export const ContainerItems = styled.div`
 
   max-height: 180px;
   overflow-y: scroll;
-
-  overflow-y: scroll;
 `;
 export const EmptyCart = styled.div`
   display: flex;

@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState, useContext } from "react";
-import api from "../config/axios";
-import { Restaurant } from "../Models/Restaurant";
-import { ThemeContext } from "../contexts/ThemeContext/ThemeContext";
+
+import { ThemeContext } from "../../contexts/ThemeContext/ThemeContext";
+import api from "../../config/axios";
+import { Restaurant } from "../../Models/Restaurant";
 
 export const useFetchRestaurantDetails = () => {
   const { updateThemeColors } = useContext(ThemeContext);

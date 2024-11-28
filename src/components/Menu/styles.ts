@@ -8,6 +8,10 @@ export const Container = styled.div`
   -moz-box-shadow: 0px 0px 11px 0px rgba(133, 133, 133, 1);
   box-shadow: 0px 0px 11px 0px rgba(133, 133, 133, 1);
   padding: 10px 20px 10px 20px;
+
+  @media (max-width: 1100px) {
+    width: 100%;
+  }
 `;
 export const ContainerMenu = styled.div`
   display: flex;
@@ -22,6 +26,9 @@ export const ContainerItem = styled.div<{
   align-items: center;
   gap: 20px;
   cursor: pointer;
+  @media (max-width: 1100px) {
+    padding-inline: 0px;
+  }
 `;
 export const Icon = styled.img<{
   $border?: boolean;
@@ -31,6 +38,10 @@ export const Icon = styled.img<{
   padding: 2px;
   border: ${(props) => (props.$border ? "2px solid" : "")};
   border-radius: 999px;
+
+  @media (max-width: 1100px) {
+    width: 60px;
+  }
 `;
 
 export const Text = styled.span<{
@@ -39,4 +50,9 @@ export const Text = styled.span<{
   font-weight: ${(props) => (props.$bold ? "600" : "")};
   font-size: 20px;
   padding: 20px;
+
+  @media (max-width: 1100px) {
+    font-size: 16px;
+    padding: 30px;
+  }
 `;

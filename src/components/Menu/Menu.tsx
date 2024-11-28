@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container, ContainerItem, ContainerMenu, Icon, Text } from "./styles";
 import List from "../List/List";
-import { useFetchRestaurantMenu } from "../../hooks/useFetchRestaurantMenu";
+import { useFetchRestaurantMenu } from "../../hooks/requests/useFetchRestaurantMenu";
 
 export default function Menu() {
   const [selected, setSelected] = useState("Burgers");

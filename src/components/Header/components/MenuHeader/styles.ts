@@ -1,12 +1,22 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div<{
+  $justifyContent?: string;
+}>`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: ${(props) => (props.$justifyContent ? props.$justifyContent : "center")};
   background-color: ${({ theme }) => theme.colors.backgroundMenu};
   color: ${({ theme }) => theme.colors.text_light};
+
+  img {
+    position: absolute;
+    width: 24px;
+    right: 10px;
+    top: 25px;
+    cursor: pointer;
+  }
 `;
 
 export const Text = styled.span<{
