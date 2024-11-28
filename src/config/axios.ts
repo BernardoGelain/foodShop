@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://cors-anywhere.herokuapp.com/cdn-dev.preoday.com/challenge/",
+  baseURL: "http://localhost:3000/proxy/",
 });
 
 export default api;
