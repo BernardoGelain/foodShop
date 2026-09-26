@@ -1,72 +1,46 @@
-# README
+# FoodShop
 
-## Como Rodar o Projeto FoodShop
+Restaurant ordering storefront. A venue payload supplies the menu, item modifiers, and brand colors. The screen lets someone browse sections and build a cart.
 
-Este guia irá ajudá-lo a configurar e executar o projeto React utilizando Yarn ou npm. Siga os passos abaixo para garantir que tudo esteja configurado corretamente.
+## What it is
 
-### Pré-requisitos
+A single-page storefront: header, section navigation, menu, item modal with modifiers, and a cart with subtotal and total. There is no checkout request in this repository.
 
-Certifique-se de ter o Node.js instalado em sua máquina. Você pode verificar se ele está instalado executando o seguinte comando no terminal:
+## Why it exists
 
-```bash
-node -v
-```
+The same interface has to follow a venue's own colors and catalog instead of a fixed theme and a hardcoded menu.
 
-Você pode usar Yarn ou npm para instalar as dependências do projeto.
+## Highlights
 
-#### Usando Yarn
+- Brand colors are read from the venue `webSettings` and applied to the styled-components theme.
+- Light and dark mode stay in `localStorage`.
+- Menu items, sections, and modifiers are modeled as separate types and rendered from the payload.
+- Cart state lives in React context. Totals are derived from the current lines.
+- A small Express process proxies the catalog so the browser can call it from localhost.
 
-1. Instale o Yarn, caso ainda não o tenha:
+## Architecture
 
-   ```bash
-   npm install --global yarn
-   ```
+The Vite app talks only to `http://localhost:3000/proxy`. That process forwards the path to the upstream catalog. The UI loads one venue from that catalog.
 
-2. Instale as dependências do projeto:
+`/sign-in` and `/contact` are registered in the router and currently render the same homepage.
 
-   ```bash
-    yarn install
-   ```
+## Tech
 
-#### Usando NPM
+React, TypeScript, Vite, React Router, MUI, styled-components, Axios, Express
 
-1. Instale as dependências do projeto:
+## Running locally
+
+Requirements: Node.js 18+.
 
 ```bash
 npm install
+node server.js
 ```
 
-### Executando o Projeto
-
-Após instalar todas as dependências, é necessário iniciar o servidor backend antes de executar o frontend.
-
-#### 1. Rodando o servidor backend
-
-Há um arquivo `server.js` incluído no projeto que serve a API para evitar erros de CORS. Para iniciar o backend, siga os passos abaixo:
-
-1. Certifique-se de estar no diretório onde o `server.js` está localizado.
-2. Inicie o servidor:
-
-   ```bash
-   node server.js
-   ```
-
-O servidor backend rodará na porta 3000. Modifique se necessário.
-
-#### 2. Rodando o frontend
-
-Com o backend rodando, inicie o servidor de desenvolvimento do frontend:
-
-##### Usando Yarn:
-
-```bash
-yarn dev
-```
-
-##### Usando NPM:
+In a second terminal:
 
 ```bash
 npm run dev
 ```
 
-O frontend abrirá por padrão na porta 5173.
+Vite serves the app on port 5173. The proxy listens on port 3000. The menu appears only if the upstream catalog responds.
