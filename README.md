@@ -28,6 +28,12 @@ The Vite app talks only to `http://localhost:3000/proxy`. That process forwards 
 
 React, TypeScript, Vite, React Router, MUI, styled-components, Axios, Express
 
+## Screenshot
+
+Menu and an empty cart. No account, order, or customer data is shown.
+
+![FoodShop menu and empty cart](docs/storefront.png)
+
 ## Running locally
 
 Requirements: Node.js 18+.
